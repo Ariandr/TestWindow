@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Test_Window_View" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status bar style switching every one second on this view controller…" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55Z-YD-HTw">
+                                <rect key="frame" x="20" y="144" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee0-LD-nXW">
+                                <rect key="frame" x="130.5" y="290" width="153" height="30"/>
+                                <state key="normal" title="Show Overlay Window"/>
+                                <connections>
+                                    <action selector="showOverlayWindow" destination="BYZ-38-t0r" eventType="touchUpInside" id="6mJ-4P-e8a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVi-hy-wJz">
+                                <rect key="frame" x="165" y="363" width="84" height="30"/>
+                                <state key="normal" title="Show Modal"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="DfJ-8O-7V3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="55Z-YD-HTw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ho2-nA-vsn"/>
+                            <constraint firstItem="yVi-hy-wJz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IuG-Pz-USc"/>
+                            <constraint firstItem="ee0-LD-nXW" firstAttribute="top" secondItem="55Z-YD-HTw" secondAttribute="bottom" constant="105" id="Z9m-d8-L5r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="55Z-YD-HTw" secondAttribute="leading" constant="-20" id="g9T-pa-BUf"/>
+                            <constraint firstItem="ee0-LD-nXW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hdr-lR-91r"/>
+                            <constraint firstItem="55Z-YD-HTw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="yB4-wv-kCE"/>
+                            <constraint firstItem="yVi-hy-wJz" firstAttribute="top" secondItem="ee0-LD-nXW" secondAttribute="bottom" constant="43" id="zhJ-1O-SL1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Overlay View Controller-->
+        <scene sceneID="VeB-VA-CPy">
+            <objects>
+                <viewController storyboardIdentifier="Overlay" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="6Xm-S1-Mcs" customClass="OverlayViewController" customModule="Test_Window_View" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ira-vN-vei">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojm-cP-DzG">
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9Gw-Pm-LjE"/>
+                                    <constraint firstAttribute="height" constant="100" id="efG-Fd-6TV"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="dismiss" destination="6Xm-S1-Mcs" eventType="touchUpInside" id="ekZ-Hu-UAy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ojm-cP-DzG" firstAttribute="centerX" secondItem="3HM-0c-vQ5" secondAttribute="centerX" id="dEO-F2-ZEK"/>
+                            <constraint firstItem="ojm-cP-DzG" firstAttribute="centerY" secondItem="3HM-0c-vQ5" secondAttribute="centerY" id="z0O-5q-Ehc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3HM-0c-vQ5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rj5-s3-kj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="138"/>
+        </scene>
+    </scenes>
+</document>
